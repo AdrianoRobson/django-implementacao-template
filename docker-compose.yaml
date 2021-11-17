@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  pgfusion:
+    build:
+      dockerfile: ./postgres-docker/pg.dockerfile
+      context: .
+    image: adriano08andrade/pgfusion:v1
+    container_name: pgfusion
+    ports:
+      - "5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
