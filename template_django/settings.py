@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'template_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'template_db',
-        'USER': 'template_user',
-        'PASSWORD': 'template_pass',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': 'db_template',
+        'USER': 'user_template',
+        'PASSWORD': 'pass_template',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 

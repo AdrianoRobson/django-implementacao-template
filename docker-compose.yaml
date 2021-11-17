@@ -1,14 +1,20 @@
-version: '3.8'
+version: "3.9"
+
 services:
-  pgfusion:
-    build:
-      dockerfile: ./postgres-docker/pg.dockerfile
-      context: .
-    image: adriano08andrade/pgfusion:v1
-    container_name: pgfusion
-    ports:
-      - "5432"
+  db:
+    image: postgres:13.1-alpine
     volumes:
-      - pgdata:/var/lib/postgresql/data
-volumes:
-  pgdata:
+      - ./data/db/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=db_template
+      - POSTGRES_USER=user_template
+      - POSTGRES_PASSWORD=pass_template
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
