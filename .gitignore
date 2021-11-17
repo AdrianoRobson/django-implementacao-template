@@ -7,3 +7,5 @@ data
 *.pyc
 
 .idea
+
+.DS_Store
