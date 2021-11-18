@@ -32,7 +32,8 @@ class Servico(Base):
 
     servico = models.CharField('Nome', max_length=100)
     descricao = models.TextField('Descricao', max_length=200)
-    icone = models.CharField('Icone', max_length=16, choices=CHOISE_ICON)
+    icone = models.CharField('Icone', max_length=16, choices=CHOISE_ICON)    
+    delay_efeito = models.DecimalField("dalay-efeito", max_digits=2, decimal_places=1, default='1.0')
     
     class Meta:
         verbose_name = "Serviço"
@@ -68,7 +69,7 @@ class Funcionario(Base):
     def __str__(self):
         return self.nome
     
-    
+
 @receiver(pre_delete, sender=Funcionario)
 def funcionario_pre(sender, instance, **kwargs): 
     instance.imagem.delete(False)  
