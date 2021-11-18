@@ -61,6 +61,7 @@ class Funcionario(Base):
     facebook = models.CharField('facebook', max_length=100, default='#')
     twitter = models.CharField('twitter', max_length=100, default='#')
     instagram = models.CharField('instagram', max_length=100, default='#')
+    delay_efeito = models.DecimalField("dalay-efeito", max_digits=2, decimal_places=1, default='1.0')
 
     class Meta:
         verbose_name = 'Funcionário'
