@@ -9,8 +9,6 @@ class IndexView(TemplateView):
 
         context = super(IndexView, self).get_context_data(**kwargs)
 
-        context['servicos'] = Servico.objects.order_by('?').all()
-
-        return super().get_context_data(**kwargs)
+        context['servicos'] = Servico.objects.order_by('?').all()   
 
         return context
