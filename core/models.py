@@ -68,8 +68,7 @@ class Funcionario(Base):
     def __str__(self):
         return self.nome
     
-
- 
+    
 @receiver(pre_delete, sender=Funcionario)
 def funcionario_pre(sender, instance, **kwargs): 
     instance.imagem.delete(False)  
