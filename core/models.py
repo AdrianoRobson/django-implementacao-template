@@ -1,5 +1,8 @@
+from typing import Sequence
 from django.db import models
 from stdimage.models import StdImageField
+from django.db.models.signals import post_init, post_save, pre_delete
+from django.dispatch.dispatcher import receiver
 import uuid
 
 def get_file_path(_instance, filename):
@@ -64,4 +67,26 @@ class Funcionario(Base):
 
     def __str__(self):
         return self.nome
+    
+
+ 
+@receiver(pre_delete, sender=Funcionario)
+def funcionario_pre(sender, instance, **kwargs): 
+    instance.imagem.delete(False)  
+
+@receiver(post_init, sender=Funcionario)
+def funcionario_imagem(sender, instance, **kwargs): 
+    instance.current_image_file = instance.imagem 
+
+@receiver(post_save, sender=Funcionario)
+def funcionario_change_image(sender, instance, **kwargs): 
+    if hasattr(instance, 'current_image_file'):
+        if instance.imagem:
+            if instance.current_image_file != instance.imagem:
+                instance.current_image_file.delete(False)
+           
+            elif instance.current_image_file:
+                instance.current_image_file.delete()
+                
+
     
