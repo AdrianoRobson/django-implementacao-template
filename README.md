@@ -1,6 +1,6 @@
-# Implementção de Back-end com Django de Template Bootstrap4 
+# Implementção de Back-end com Django de Template Bootstrap4
 
-> Template implementado com back-end em Django com Banco de dados PostgreSQL que permite customização de algumas sections da página a partir do django-admin
+> Template implementado com back-end em Django com Banco de dados PostgreSQL que permite customização de algumas sections da página a partir do django-admin.  
 
 <!-- Informações curtas sobre o projeto -->
 O objetivo desse projeto é mostrar as vantagens em usar o django-admin para customizar um template. 
