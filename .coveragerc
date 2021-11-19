@@ -1,13 +1,32 @@
 [run]
-source = . 
+source = .
 
 omit =
-*/__init__.py
-*/settings.py
-*/manage.py
-*/wsgi.py
-*/apps.py
-*/urls.py
-*/admin.py
-*/migrations/*
-*/tests/*
+    ./venv/*,
+    *testes*,
+    *apps.py,
+    *manage.py,
+    *settings.py,
+    *__init__.py,
+    *migrations*, 
+    *templatetags*,
+    *asgi*,
+    *wsgi*,
+    *admin.py,
+    *urls.py,
+
+
+[report]
+omit =
+    ./venv/*,
+    *testes*,
+    *apps.py,
+    *manage.py,
+    *settings.py,
+    *__init__.py,
+    *migrations*, 
+    *templatetags*,
+    *asgi*,
+    *wsgi*,
+    *admin.py,
+    *urls.py,
