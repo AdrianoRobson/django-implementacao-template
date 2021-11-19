@@ -1,5 +1,6 @@
 from django import forms
-from django.core.email.message import EmailMessage
+from django.core.mail.message import EmailMessage
+
 
 class ContatoForm(forms.Form):
     nome = forms.CharField(label='Nome', max_length=100)
