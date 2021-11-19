@@ -11,4 +11,6 @@ class IndexView(TemplateView):
 
         context['servicos'] = Servico.objects.order_by('?').all()   
 
+        context['funcionarios'] = Funcionario.objects.order_by('?').all
+
         return context
