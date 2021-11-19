@@ -126,3 +126,22 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATIC_ROOT = path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = path.join(BASE_DIR, 'media')
+
+
+# Email teste console( Apensa para teste offline)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+"""
+# Configuraçãoes de email para produção, quando vc vai publicar em um
+# local que tenha servidor de email descomente essa linha e comente a linha 
+# EMAIL_BACKEND
+
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'no-reply@fusion.com.br'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = 'fusion'
+DEFAULT_FROM_EMAIL = 'contato@fusion.com.br'
+
+"""
+
