@@ -16,7 +16,11 @@ media
 
 .DS_Store
 
-htmlcov
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
 
 .coverage
 
