@@ -1,7 +1,7 @@
 import uuid
 from django.test import TestCase
 from model_mommy import mommy
-from core.models import get_file_path
+from core.models import get_file_path 
 
 class GetFilePathTestCase(TestCase):
 
@@ -35,4 +35,6 @@ class FuncionarioTestCase(TestCase):
 
     def test_str(self):
         self.assertAlmostEquals(str(self.funcioanario), self.funcioanario.nome)
+
+ 
 
