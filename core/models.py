@@ -77,13 +77,11 @@ def funcionario_pre(sender, instance, **kwargs):
 
 @receiver(post_init, sender=Funcionario)
 def funcionario_imagem(sender, instance, **kwargs): 
-    instance.current_image_file = instance.imagem 
-    print(f'POST_INIT: {instance.imagem}')
+    instance.current_image_file = instance.imagem  
 
 @receiver(post_save, sender=Funcionario)
 def funcionario_change_image(sender, instance, **kwargs): 
-    if hasattr(instance, 'current_image_file'):
-        print(f'POST_SAVE: {instance.imagem}')
+    if hasattr(instance, 'current_image_file'): 
         if instance.imagem:
             if instance.current_image_file != instance.imagem:
                 instance.current_image_file.delete(False)
