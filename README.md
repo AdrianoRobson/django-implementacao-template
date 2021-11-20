@@ -5,7 +5,7 @@
 <!-- Informações curtas sobre o projeto -->
 O objetivo desse projeto é mostrar as vantagens em usar o django-admin para customizar um template. 
 
-Com django-admin é possível adicinar ou remover conteúdo dinâmicamente da página web do Template
+Com django-admin é possível adicinar ou remover conteúdo dinâmicamente à página web do Template
 <!-- Fim informações curtas -->
 
 <!-- Aqui colocamos um scress shot do projeto -->
