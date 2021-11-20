@@ -23,7 +23,7 @@ docker-compose up
 ```  
 
 
-Criação das migratios para criação das tabelas no banco de dados
+Criação das migrations para criação das tabelas no banco de dados
 
 ```sh
 docker exec -it template-django_web_1 python manage.py migrate
